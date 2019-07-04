@@ -1,4 +1,3 @@
-import DirWatcher from "./dirWatcher";
 const fs = require('fs');
 const nodePath = require('path');
 const csvjson = require('csvjson');
@@ -7,9 +6,10 @@ const readFileAsync = util.promisify(fs.readFile);
 const readDirAsync = util.promisify(fs.readdir);
 
 class Importer {
-    constructor() {
-        this.dirWatcher = new DirWatcher();
-        this.dirWatcher.on('changed', (path) => {
+    constructor(dirWatcher) {
+        dirWatcher.on('changed', (path) => {
+            // For sychronous import
+            // this.importSync(path);
             this.import(path).then((data) => {
                 console.log(data);
             }).catch((err) => {
