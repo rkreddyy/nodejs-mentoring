@@ -4,6 +4,7 @@ const EventEmitter = require('eventemitter3');
 class DirWatcher extends EventEmitter {
     constructor() {
         super();
+        this.watch("data", 2000);
     }
 
     watch(path, delay) {
@@ -28,7 +29,6 @@ class DirWatcher extends EventEmitter {
         } catch (error) {
             console.log("An internal error occured: " + error);
         }
-
     }
 }
 
