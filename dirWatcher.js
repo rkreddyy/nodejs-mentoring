@@ -1,5 +1,5 @@
-const fs = require('fs');
-const EventEmitter = require('eventemitter3');
+import fs from "fs";
+import EventEmitter from "eventemitter3";
 
 class DirWatcher extends EventEmitter {
     constructor() {
@@ -20,13 +20,13 @@ class DirWatcher extends EventEmitter {
                     lastModifiedTime = stats.mtimeMs;
                 }
 
-                if (lastModifiedTime != stats.mtimeMs) {
+                if (lastModifiedTime !== stats.mtimeMs) {
                     this.emit('changed', path);
                 }
                 lastModifiedTime = stats.mtimeMs;
             }, delay);
         } catch (error) {
-            console.log("An internal error occured: " + error);
+            console.error("An internal error occured: " + error);
         }
     }
 }
