@@ -24,5 +24,9 @@
     "@babel/preset-stage-2": "^7.0.0",
     "@babel/register": "^7.4.4",
     "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "csvjson": "^5.1.0",
+    "eventemitter3": "^4.0.0"
   }
 }
