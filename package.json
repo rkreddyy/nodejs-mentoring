@@ -26,7 +26,10 @@
     "nodemon": "^1.19.1"
   },
   "dependencies": {
+    "commander": "^2.20.0",
+    "concat": "^1.0.3",
     "csvjson": "^5.1.0",
-    "eventemitter3": "^4.0.0"
+    "eventemitter3": "^4.0.0",
+    "through2": "^3.0.1"
   }
 }
