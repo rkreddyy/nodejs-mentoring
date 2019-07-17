@@ -12,7 +12,7 @@ import concat from 'concat';
  * npx babel-node ./utils/streams -a outputFile -f ./data/products_data1.csv
  * npx babel-node ./utils/streams -a convertFromFile -f ./data/products_data1.csv
  * npx babel-node ./utils/streams -a convertToFile -f ./data/products_data1.csv
- * npx babel-node ./utils/streams -a cssBundler -p ./css
+ * npx babel-node ./utils/streams -a cssBundler -l ./css
  */
 class Streams {
     constructor() {
