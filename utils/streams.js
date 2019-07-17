@@ -88,17 +88,13 @@ class Streams {
     }
 
     outputFile(filePath) {
-        if (!fs.existsSync(filePath)) {
-            throw (filePath + " is not a valid file path");
-        }
+        this.validateFilePath(filePath);
         let readableStream = fs.createReadStream(filePath);
         readableStream.pipe(process.stdout);
     }
 
     convertFromFile(filePath) {
-        if (!fs.existsSync(filePath)) {
-            throw (filePath + " is not a valid file path");
-        }
+        this.validateFilePath(filePath);
         let readableStream = fs.createReadStream(filePath);
         let toObject = csvjson.stream.toObject();
         let stringify = csvjson.stream.stringify();
@@ -106,9 +102,7 @@ class Streams {
     }
 
     convertToFile(filePath) {
-        if (!fs.existsSync(filePath)) {
-            throw (filePath + " is not a valid file path");
-        }
+        this.validateFilePath(filePath);
         let readableStream = fs.createReadStream(filePath);
         let writableStream = fs.createWriteStream(filePath.replace('.csv', '.json'));
         let toObject = csvjson.stream.toObject();
@@ -118,9 +112,9 @@ class Streams {
 
     cssBundler(directoryPath) {
         const fullPath = path.join(__dirname, '..', directoryPath);
-        const cssBundle = path.join(fullPath, 'bundle.css');
-        if (fs.existsSync(cssBundle)) {
-            fs.unlinkSync(cssBundle);
+        const cssBundleFile = path.join(fullPath, 'bundle.css');
+        if (fs.existsSync(cssBundleFile)) {
+            fs.unlinkSync(cssBundleFile);
         }
         const cssFiles = fs.readdirSync(fullPath).map(file => path.join(fullPath, file));
         let cdnClass = `
@@ -129,9 +123,15 @@ class Streams {
                             width: 25%;
                             height: 75%;
                         }`;
-        concat(cssFiles, cssBundle).then(() => {
-            fs.appendFileSync(cssBundle, cdnClass, 'utf-8');
+        concat(cssFiles, cssBundleFile).then(() => {
+            fs.appendFileSync(cssBundleFile, cdnClass, 'utf-8');
         });
+    }
+
+    validateFilePath(filePath){
+        if (!fs.existsSync(filePath)) {
+            throw (filePath + " is not a valid file path");
+        }
     }
 }
 
