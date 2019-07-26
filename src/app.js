@@ -1,10 +1,10 @@
 import express from "express";
-import queryParser from "./middlewares/queryParser";
-import cookieParser from "./middlewares/cookieParser";
+import QueryParser from "./middlewares/queryParser";
+import CookieParser from "./middlewares/cookieParser";
 
 const app = express();
-app.use(queryParser);
-app.use(cookieParser);
+app.use(QueryParser);
+app.use(CookieParser);
 
 app.get('/', function (req, res) {
     res.send('Invalid Route');

@@ -1,12 +1,15 @@
 import querystring from 'querystring';
+import url from "url";
 
-export default function queryParser(err, req, res, next) {
-    if (err) throw err;
+const QueryParser = (req, res, next) => {
 
     let parsedUrl = url.parse(req.url);
     let parsedQS = querystring.parse(parsedUrl.query);
 
     req.parsedQuery = parsedQS;
+    console.log(`QUERY PARSER: ${JSON.stringify(parsedQS)}`);
 
     next();
-}
+};
+
+export default QueryParser;
