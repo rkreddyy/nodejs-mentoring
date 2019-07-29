@@ -1,4 +1,4 @@
-const CookieParser = (req, res, next) => {
+const cookieParser = (req, res, next) => {
     // if cookie is not present, add one cookie
     if (req.headers.cookie === undefined) {
         req.headers.cookie = 'username=John Doe; expires=Thu, 18 Dec 2019 12:00:00 UTC';
@@ -19,4 +19,4 @@ function parseCookie(cookie, separator) {
     return output;
 };
 
-export default CookieParser;
+export default cookieParser;

@@ -1,7 +1,7 @@
 import querystring from 'querystring';
 import url from "url";
 
-const QueryParser = (req, res, next) => {
+const queryParser = (req, res, next) => {
 
     let parsedUrl = url.parse(req.url);
     let parsedQS = querystring.parse(parsedUrl.query);
@@ -12,4 +12,4 @@ const QueryParser = (req, res, next) => {
     next();
 };
 
-export default QueryParser;
+export default queryParser;

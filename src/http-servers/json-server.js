@@ -18,14 +18,7 @@ const product = {
 const server = http.createServer();
 server.on('request', (req, res) => {
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    
-    const inStream = new Readable({
-        read() { }
-    });
-    inStream.push(JSON.stringify(product));
-    inStream.push(null);
-
-    inStream.pipe(res);
+    res.end(JSON.stringify(product));
 })
 server.listen(port, () => {
     console.log(`Server running at http://${hostname}:${port}/`);

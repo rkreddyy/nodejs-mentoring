@@ -1,12 +1,12 @@
 import express from "express";
-import QueryParser from "./middlewares/queryParser";
-import CookieParser from "./middlewares/cookieParser";
+import queryParser from "./middlewares/queryParser";
+import cookieParser from "./middlewares/cookieParser";
 import { router } from './routes';
 
 const app = express();
 
-app.use(QueryParser);
-app.use(CookieParser);
+app.use(queryParser);
+app.use(cookieParser);
 app.use(router);
 
 export default app;
