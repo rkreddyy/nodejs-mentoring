@@ -4,7 +4,11 @@
   "description": "Learning Node JS",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon --exec babel-node app.js",
+    "start": "nodemon --exec babel-node ./src/index.js",
+    "text-server": "nodemon --exec babel-node ./http-servers/plain-text-server",
+    "html-server": "nodemon --exec babel-node ./http-servers/html-server",
+    "json-server": "nodemon --exec babel-node ./http-servers/json-server",
+    "echo-server": "nodemon --exec babel-node ./http-servers/echo-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,6 +34,7 @@
     "concat": "^1.0.3",
     "csvjson": "^5.1.0",
     "eventemitter3": "^4.0.0",
+    "express": "^4.17.1",
     "through2": "^3.0.1"
   }
 }
