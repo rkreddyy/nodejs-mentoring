@@ -1,3 +1,25 @@
 {
-    "name": "Node.js Homework Application"
+    "jwt": {
+        "secret": "secret-secret"
+    },
+    "strategies": {
+        "facebook": {
+            "clientID": "357356055164101",
+            "clientSecret": "ea2652f913fd9b935bc03de8df1f5dce",
+            "callbackURL": "http://localhost:8080/api/auth/facebook/callback"
+        },
+        "google": {
+            "clientID": "379190260197-u67nb6k490ooghm0a815p2ttteplut2m.apps.googleusercontent.com",
+            "clientSecret": "BBOoieW5azhgPUh7PgXYodSH",
+            "callbackURL": "http://localhost:8080/api/auth/google/callback"
+        },
+        "twitter": {
+            "consumerKey": "357356055164101",
+            "consumerSecret": "ea2652f913fd9b935bc03de8df1f5dce",
+            "callbackURL": "http://localhost:8080/api/auth/twitter/callback"
+        }
+    },
+    "session":{
+        "secret": "hello-secret"
+    }
 }

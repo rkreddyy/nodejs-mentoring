@@ -7,7 +7,6 @@ const queryParser = (req, res, next) => {
     let parsedQS = querystring.parse(parsedUrl.query);
 
     req.parsedQuery = parsedQS;
-    console.log(`QUERY PARSER: ${JSON.stringify(parsedQS)}`);
 
     next();
 };
