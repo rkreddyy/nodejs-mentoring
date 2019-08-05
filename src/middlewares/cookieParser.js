@@ -4,8 +4,7 @@ const cookieParser = (req, res, next) => {
         req.headers.cookie = 'username=John Doe; expires=Thu, 18 Dec 2019 12:00:00 UTC';
     }
     req.parsedCookies = parseCookie(req.headers.cookie);
-    console.log(`COOKIE PARSER: ${JSON.stringify(req.parsedCookies)}`);
-
+    
     next();
 };
 

@@ -1,14 +1,16 @@
-import express from 'express';
-import { router as userRouter } from './users';
-import { router as productRouter } from './products';
+import express from "express";
+import userRouter from './users/';
+import productRouter from './products/';
+import authRouter from './auth';
+import checkToken from '../middlewares/checkToken';
 
-const router = express.Router();
+const app = express();
 
-router.use('/api/users', userRouter);
-router.use('/api/products', productRouter);
+/** JWT Authentication */
+app.use('/api/users', checkToken, userRouter);
+app.use('/api/products', checkToken, productRouter);
+app.use('/api/auth', authRouter);
 
-router.get('/*', (req, res) => {
-    res.send('Invalid Route');
-});
+app.get('*', (req, res)=> res.send('Invalid Route.'));
 
-export { router };
+export default app;
