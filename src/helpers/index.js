@@ -5,26 +5,18 @@ export const findUser = (username, password) => {
 }
 
 export const formSuccessResponse = (user, token) => {
-    return {
-        "code": 200,
-        "message": "OK",
-        "data": {
-            "user": {
-                "email": user.email,
-                "username": user.username
-            }
-        },
-        "token": token
-    }
+    return (
+        200,
+        "OK",
+        { data: user },
+        { token: token }
+    )
 }
 
-export const formErrorResponse = (code, message, username, details) => {
-    return {
-        "code": code,
-        "message": message,
-        "data": {
-            "user": username,
-            "message": details
-        }
-    }
+export const formErrorResponse = (code, statusMessage, username, message) => {
+    return (
+        code,
+        statusMessage,
+        { data: username, message: statusMessage }
+    )
 }
