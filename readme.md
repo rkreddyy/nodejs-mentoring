@@ -31,8 +31,10 @@ Follow the below steps to install and query the API.
 
 ## REST API
 
-Following are the REST endpoints.
-Authentication is done based on the user data available at `\src\data\users.json`.
+Authentication is done based on the user data available in the database.
+You can find User schema at `/src/db/models/user.js` and Product schema at `/src/db/models/product.js`
+
+### Following are the REST endpoints.
 
 METHOD     |  END-POINT                 | ACTION
 -----------|----------------------------|--------
