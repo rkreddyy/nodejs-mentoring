@@ -29,6 +29,6 @@ POST       |  /api/products             |  Add ​NEW​ product and return it
 GET        |  /api/users                |  Return ​ALL​ users
 POST       |  /api/auth                 |  Returns an access token after verifying the username and password                                              passed in the body
 POST       |  /api/auth/local           |  Same as /api/auth, but uses passport-local strategy for                                                        authentication
-POST       |  /api/auth/facebook        |  Authenticates user with passport-facebook strategy
-POST       |  /api/auth/google          |  Authenticates user with passport-google strategy
-POST       |  /api/auth/twitter         |  Authenticates user with passport-twitter strategy
+GET        |  /api/auth/facebook        |  Authenticates user with passport-facebook strategy
+GET        |  /api/auth/google          |  Authenticates user with passport-google strategy
+GET        |  /api/auth/twitter         |  Authenticates user with passport-twitter strategy

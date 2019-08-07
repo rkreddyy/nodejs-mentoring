@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import passport from "passport";
-import { findUser, formSuccessResponse, formErrorResponse } from './../helpers'
+import { findUser, response } from './../helpers'
 import * as config from './../config/config.json';
 import strategies from "../config/strategies";
 
@@ -17,14 +17,14 @@ export const auth = (req, res) => {
                 config.jwt.secret,
                 { expiresIn: '24h' }
             );
-            res.json(formSuccessResponse(user, token));
+            res.send(response(200, "OK", user, token));
         } else {
             res.status(403);
-            res.json(formErrorResponse(403, "Forbidden", username, `Incorrect username or password`));
+            res.send(response(403, "Forbidden", "Incorrect username or password"));
         }
     } else {
         res.status(404);
-        res.json(formErrorResponse(404, "Not Found", username, `user: ${username} does not exist`));
+        return res.send(response(404, "Not found", "User Not Found"));
     }
 }
 
