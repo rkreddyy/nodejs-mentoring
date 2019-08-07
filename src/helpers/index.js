@@ -1,7 +1,11 @@
-import * as users from './../data/users';
-
-export const findUser = (username, password) => {
-    return users.default.find(user => user.username === username && user.password === password);
+export const findUser = (db, username, password) => {
+    return db.User.findOne({
+        where: {
+            [db.Sequelize.Op.and]: [
+                { username: username },
+                { password: password }]
+        }
+    });
 }
 
 export const response = (code, message, data, token) => ({
