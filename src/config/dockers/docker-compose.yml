@@ -1,0 +1,11 @@
+  mongo:
+    container_name: mongo
+    image: mongo:4.0.12-xenial
+    ports:
+      - '27017:27017'
+    restart: always
+    volumes: ['mongo:/data/db']
+    environment:
+      MONGO_INITDB_DATABASE: mongodb
+      # MONGO_INITDB_ROOT_USERNAME: admin
+      # MONGO_INITDB_ROOT_PASSWORD: password

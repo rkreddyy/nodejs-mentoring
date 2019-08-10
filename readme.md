@@ -8,6 +8,28 @@ Follow the below steps to install and query the API.
 ## Install
 
     npm install
+## docker-compose.yml for mongodb
+
+    docker-compose.yml file in present at `src/config/dockers/docker-compose.yml`
+    It contains the instructions to run mongo on docker container
+
+## Follow the steps to install mongodb on docker container 
+
+    Open command promt and navigate to the folder where docker-compose.yaml is located
+
+    # Run in Docker. Use -d flag to run in background
+    docker-compose up -d
+
+    # To see the details of all the containers
+    docker container ls
+
+    # To execute MongoDB statements against your database instance
+    docker exec -it mongo bash
+    - type mongo and hit enter to see the details of your mongodb instance
+    - 'use mongodb' command creates a db with name mongodb and starts using it
+
+    # Tear down - Stops the container and removes it
+    docker-compose down
 
 ## Sequelize set up models, migrations and seeding
 
