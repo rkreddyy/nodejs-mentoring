@@ -57,17 +57,35 @@ Follow the below steps to install and query the API.
 Authentication is done based on the user data available in the database.
 You can find User schema at `/src/db/models/user.js` and Product schema at `/src/db/models/product.js`
 
-### Following are the REST endpoints.
+### Postgres REST endpoints.
 
-METHOD     |  END-POINT                 | ACTION
------------|----------------------------|--------
-GET        |  /api/products             |  Return ​ALL​ products
-GET        |  /api/products/:id         |  Return ​SINGLE​ product
-GET        |  /api/products/:id/reviews |  Return ​ALL​ reviews for a single product
-POST       |  /api/products             |  Add ​NEW​ product and return it
-GET        |  /api/users                |  Return ​ALL​ users
-POST       |  /api/auth                 |  Returns an access token after verifying the username and password passed in the body
-POST       |  /api/auth/local           |  Same as /api/auth, but uses passport-local strategy for authentication
-GET        |  /api/auth/facebook        |  Authenticates user with passport-facebook strategy
-GET        |  /api/auth/google          |  Authenticates user with passport-google strategy
-GET        |  /api/auth/twitter         |  Authenticates user with passport-twitter strategy
+METHOD     |  END-POINT                       | ACTION
+-----------|----------------------------------|--------
+GET        |  /api/products                   |  Return ​ALL​ products
+GET        |  /api/products/:id               |  Return ​SINGLE​ product
+GET        |  /api/products/:id/reviews       |  Return ​ALL​ reviews for a single product
+POST       |  /api/products                   |  Add ​NEW​ product and return it
+GET        |  /api/users                      |  Return ​ALL​ users
+POST       |  /api/auth                       |  Returns an access token after verifying the username and password passed in the body
+POST       |  /api/auth/local                 |  Same as /api/auth, but uses passport-local strategy for authentication
+GET        |  /api/auth/facebook              |  Authenticates user with passport-facebook strategy
+GET        |  /api/auth/google                |  Authenticates user with passport-google strategy
+GET        |  /api/auth/twitter               |  Authenticates user with passport-twitter strategy
+
+### MONGO REST endpoints
+
+METHOD     |  END-POINT                       | ACTION
+-----------|----------------------------------|--------
+GET        |  /api/mongo/products             |  Return ​ALL​ products
+POST       |  /api/mongo/products             |  Add ​NEW​ product and returns it
+GET        |  /api/mongo/products/:id         |  Returns the product with given id
+DELETE     |  /api/mongo/products/:id         |  Deletes the product with given id
+GET        |  /api/mongo/products/:id/reviews |  Return ​ALL​ reviews for a single product
+GET        |  /api/mongo/users                |  Return ​ALL​ users
+POST       |  /api/mongo/users                |  Saves the user
+DELETE     |  /api/mongo/users/:id            |  Deletes the user with id
+GET        |  /api/mongo/cities/random        |  Returns a random city
+GET        |  /api/mongo/cities               |  Returns ​ALL​ cities
+POST       |  /api/mongo/cities               |  Saves the city
+PUT        |  /api/mongo/cities/:id           |  Returns the city with id
+DELETE     |  /api/mongo/cities/:id           |  Deletes the city with id
