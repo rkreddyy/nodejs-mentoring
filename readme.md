@@ -15,7 +15,7 @@ Follow the below steps to install and query the API.
 
 ## Follow the steps to install mongodb on docker container 
 
-    Open command promt and navigate to the folder where docker-compose.yaml is located
+    Open command promt and navigate to the folder where docker-compose.yml is located
 
     # Run in Docker. Use -d flag to run in background
     docker-compose up -d
@@ -43,6 +43,7 @@ Follow the below steps to install and query the API.
     npx sequelize-cli db:create
     npx sequelize-cli db:migrate
     npx sequelize-cli seed:generate --name create-users // dont run this if users seed is already present
+    npx sequelize-cli seed:generate --name create-products // dont run this if products seed is already present
     npx sequelize-cli db:seed:all
 
 ## Run the app
