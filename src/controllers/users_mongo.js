@@ -8,18 +8,18 @@ export const getUsers = (req, res) => {
 }
 
 export const createUser = (req, res) => {
-  const { password, username, email } = req.body;
-  User.create({
-    password, username, email
-  }, (err, user) => {
-    if (err) return res.send(err);
-    return res.send(user);
-  });
+  const { firstname, lastname, username, email, password } = req.body;
+  User.create(
+    { firstname, lastname, username, email, password },
+    (err, user) => {
+      if (err) return res.send(err);
+      return res.send(user);
+    });
 }
 
 export const deleteUser = (req, res) => {
   const { id: _id } = req.params;
-  User.remove({ _id }, (err, success) => {
+  User.deleteOne({ _id }, (err, success) => {
     if (err) res.send(err);
     return res.send("Deleted user successfully.")
   });

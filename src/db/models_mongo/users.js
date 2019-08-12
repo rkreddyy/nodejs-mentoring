@@ -1,10 +1,20 @@
 import mongoose from '../../config/mongoose';
 
 const usersSchema = new mongoose.Schema({
+  firstname: {
+    type: String,
+    required: true,
+    minlength: [3, 'Firstname should be of minimum 3 characters']
+  },
+  lastname: {
+    type: String,
+    required: true,
+    minlength: [3, 'Lastname should be of minimum 3 characters']
+  },
   username: {
     type: String,
     required: true,
-    minlength: [3, 'Name should be of minimum 3 characters']
+    minlength: [3, 'Username should be of minimum 3 characters']
   },
   email: {
     type: String,

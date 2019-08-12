@@ -17,7 +17,7 @@ export const getSingleProduct = (req, res) => {
 
 export const removeProduct = (req, res) => {
   const { id: _id } = req.params;
-  Product.remove({ _id }, (err, product) => {
+  Product.deleteOne({ _id }, (err, product) => {
     if (err) return res.send(`Error: ${err}`);
     return res.send("Successfully deleted product.");
   });

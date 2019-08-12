@@ -1,5 +1,5 @@
   mongo:
-    container_name: mongo
+    container_name: mongo-container
     image: mongo:4.0.12-xenial
     ports:
       - '27017:27017'
