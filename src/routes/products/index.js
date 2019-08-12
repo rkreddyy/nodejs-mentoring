@@ -7,7 +7,7 @@ productRouter.route('/')
   .get(products.getAllProducts);
 
 productRouter.route('/')
-  .post(products.postProduct);
+  .post(products.createProduct);
 
 productRouter.route('/:id')
   .get(products.getProduct);

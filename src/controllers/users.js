@@ -1,5 +1,9 @@
-import * as users from './../data/users';
+import db from './../db/models';
 
 export const getAllUsers = (req, res) => {
-    return res.send(users.default);
+    return db.User.findAll()
+        .then(users => {
+            return res.json(users);
+        })
+        .catch(err => res.send(err));
 }
