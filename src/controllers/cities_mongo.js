@@ -16,11 +16,9 @@ export const getAllCities = (req, res) => {
 }
 
 export const createCity = (req, res) => {
-  const { name, country, capital, location} = req.body;
+  const { name, country, capital, location } = req.body;
   City.create({
-    name,
-    country,
-    capital,
+    name, country, capital,
     location: {
       lat: location.lat,
       long: location.long
@@ -33,9 +31,7 @@ export const createCity = (req, res) => {
 
 export const updateCity = (req, res) => {
   const { id: _id } = req.params;
-  const options = {
-    new: true
-  }
+  const options = { new: true }
   City.findOneAndUpdate({ _id }, req.body, options, (err, city) => {
     if (err) return res.send(err);
     return res.send(city);

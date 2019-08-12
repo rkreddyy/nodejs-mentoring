@@ -31,6 +31,8 @@ Follow the below steps to install and query the API.
     # Tear down - Stops the container and removes it
     docker-compose down
 
+    mongodb server will be available at `127.0.0.1:27017` on local machine, based on the config in docker-compose.yml.
+
 ## Sequelize set up models, migrations and seeding
 
     .sequelizerc file is configured with required paths
