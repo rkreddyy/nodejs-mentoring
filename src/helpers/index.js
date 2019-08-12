@@ -2,8 +2,8 @@ export const findUser = (db, username, password) => {
     return db.User.findOne({
         where: {
             [db.Sequelize.Op.and]: [
-                { username: username },
-                { password: password }]
+                { username },
+                { password }]
         }
     });
 }
