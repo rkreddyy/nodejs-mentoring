@@ -7,11 +7,9 @@ const localAuth = (response) => {
     function (username, password, done) {
       findUser(db, username, password)
         .then((user) => {
-          if (user) {
-            return done(null, user, response(200, "OK", user));
-          } else {
-            return done(response(404, "Invalid Credentials", "Invalid Credentials"))
-          }
+          return user ?
+            done(null, user, response(200, "OK", user)) :
+            done(response(404, "Invalid Credentials", "Invalid Credentials"));
         })
         .catch((err) => {
           res.status(500);

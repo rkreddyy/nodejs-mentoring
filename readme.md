@@ -46,6 +46,20 @@ Follow the below steps to install and query the API.
     npx sequelize-cli seed:generate --name create-products // dont run this if products seed is already present
     npx sequelize-cli db:seed:all
 
+## Sequelize set up models, migrations and seeding
+
+    .sequelizerc file is configured with required paths
+
+    Run the following commands to generate the models, db, migrations and seeding data
+
+    npx sequelize init
+    npx sequelize-cli model:generate --name User --attributes firstname:string,lastname:string,email:string,username:string,password:string
+    npx sequelize-cli model:generate --name Product --attributes name:string,price:float,reviews:text
+    npx sequelize-cli db:create
+    npx sequelize-cli db:migrate
+    npx sequelize-cli seed:generate --name create-users // dont run this if users seed is already present
+    npx sequelize-cli db:seed:all
+
 ## Run the app
 
     npm start

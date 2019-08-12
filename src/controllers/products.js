@@ -10,7 +10,7 @@ export const getAllProducts = (req, res) => {
 
 export const getProduct = (req, res) => {
     const { id } = req.params;
-    return db.Product.findOne({ where: { id: id } })
+    return db.Product.findOne({ where: { id } })
         .then(product => {
             return res.json(product);
         })
@@ -19,7 +19,7 @@ export const getProduct = (req, res) => {
 
 export const getProductReviews = (req, res) => {
     const { id } = req.params;
-    return db.Product.findOne({ where: { id: id } })
+    return db.Product.findOne({ where: { id } })
         .then(product => {
             return res.json(product.reviews);
         })
