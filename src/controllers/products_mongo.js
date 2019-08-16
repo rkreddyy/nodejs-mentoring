@@ -32,9 +32,9 @@ export const getProductReviews = (req, res) => {
 }
 
 export const createProduct = (req, res) => {
-  const { name, brand, price, options, reviews } = req.body;
+  const { name, price, reviews } = req.body;
   Product.create({
-    name, brand, price, options, reviews
+    name, price, reviews
   }, (err, product) => {
     if (err) return res.send(`Error: ${err}`);
     return res.send(product);
