@@ -1,4 +1,5 @@
-import mongoose from '../../config/mongoose';
+const mongoose = require('../../config/mongoose');
+// import mongoose from '../../config/mongoose';
 
 const usersSchema = new mongoose.Schema({
   firstname: {
@@ -42,4 +43,5 @@ usersSchema.pre('save', function (next){
   next();
 });
 
-export default mongoose.model('User', usersSchema);
+module.exports = mongoose.model('User', usersSchema);
+// export default mongoose.model('User', usersSchema);

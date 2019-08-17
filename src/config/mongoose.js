@@ -1,4 +1,5 @@
-import mongoose from 'mongoose';
+const mongoose = require("mongoose");
+// import mongoose from 'mongoose';
 
 mongoose.connect("mongodb://127.0.0.1:27017/mongodb", { useNewUrlParser: true });
 
@@ -8,4 +9,5 @@ db.on('error', (err) => console.info('connection error: ', err.message));
 db.on('open', () => console.info('Connection to MongoDB established...'));
 db.on('disconnected', () => console.info("MongoDB connection disconnected..."));
 
-export default mongoose;
+module.exports = mongoose;
+// export default mongoose;

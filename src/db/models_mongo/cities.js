@@ -1,4 +1,5 @@
-import mongoose from '../../config/mongoose';
+const mongoose = require('../../config/mongoose');
+// import mongoose from '../../config/mongoose';
 
 const citiesSchema = new mongoose.Schema({
   name: {
@@ -38,4 +39,5 @@ citiesSchema.pre('save', function (next) {
   next();
 })
 
-export default mongoose.model('City', citiesSchema);
+// export default mongoose.model('City', citiesSchema);
+module.exports = mongoose.model('City', citiesSchema);
