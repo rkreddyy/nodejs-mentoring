@@ -7,7 +7,7 @@ info:
   contact:
     email: ravikiran.anumula@gmail.com
 host: virtserver.swaggerhub.com
-basePath: /epam-node/nodejs-mentoring/1.0.0
+basePath: /api
 tags:
 - name: auth
   description: API for auth
@@ -371,7 +371,7 @@ paths:
       - users
       summary: Gets all users
       description: Gets all users
-      operationId: getAllUsers
+      operationId: getUsers
       produces:
       - application/json
       parameters: []
