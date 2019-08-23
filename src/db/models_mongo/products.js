@@ -1,4 +1,5 @@
-import mongoose from '../../config/mongoose';
+const mongoose = require('../../config/mongoose');
+// import mongoose from '../../config/mongoose';
 
 const productsSchema = new mongoose.Schema({
   name: {
@@ -22,4 +23,5 @@ productsSchema.pre('save', function (next){
   next();
 });
 
-export default mongoose.model('Product', productsSchema);
+module.exports = mongoose.model('Product', productsSchema);
+// export default mongoose.model('Product', productsSchema);
